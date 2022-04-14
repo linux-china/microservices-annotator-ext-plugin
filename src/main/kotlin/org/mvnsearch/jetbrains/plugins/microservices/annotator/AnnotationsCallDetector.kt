@@ -32,7 +32,7 @@ class AnnotationsCallDetector : CallDetector {
         if (psiMethod != null) {
             val psiClass = psiMethod.containingClass
             if (psiClass != null) {
-                val annotations = if (AnnotationUtil.isAnnotated(psiMethod, GLOBAL_ANNOTATIONS.keys, 0)) {
+                val annotations = if (AnnotationUtil.isAnnotated(psiClass, GLOBAL_ANNOTATIONS.keys, 0)) {
                     psiMethod.annotations
                 } else if (AnnotationUtil.isAnnotated(psiMethod, GLOBAL_ANNOTATIONS.keys, 0)) {
                     psiClass.annotations
