@@ -1,18 +1,11 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.linuxchina.microservicesannotatorextplugin</id>
-    <name>microservices-annotator-ext-plugin</name>
-    <vendor>linux-china</vendor>
+    <id>com.github.linuxchina.microservices.annotator.ext.plugin</id>
+    <name>Microservices Annotator Annotations Extension</name>
+    <vendor email="libing.chen@gmail.com">linux_china</vendor>
 
-    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.linuxchina.microservicesannotatorextplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.linuxchina.microservicesannotatorextplugin.services.MyProjectService"/>
-    </extensions>
+    <depends optional="true" config-file="annotator-msa.xml">org.strangeway.msa</depends>
 
-    <applicationListeners>
-        <listener class="com.github.linuxchina.microservicesannotatorextplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
