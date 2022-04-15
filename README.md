@@ -9,8 +9,32 @@ Microservices Annotator ex-plugin
 
 Usage:
 
-* annotate your java code with Annotation
-* check gutter area with icons
+* Add Microservices Annotator's annotation dependency
+
+```xml
+
+<dependency>
+    <groupId>org.mvnsearch</groupId>
+    <artifactId>microservices-annotator</artifactId>
+    <version>0.1.0</version>
+</dependency>
+```
+
+* Add annotation in the code
+
+```java
+
+@RemoteAccess
+public interface UserService {
+    String findNickById(Integer id);
+}
+```
+
+* Microservices annotate icon will be in gutter when APIs called.
+
+```
+String nick = userService.findNickById(1);
+```
 
 <!-- Plugin description end -->
 
