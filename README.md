@@ -1,8 +1,6 @@
 Microservices Annotator ext-plugin
 ===================================
 
-[Microservices Annotator](https://plugins.jetbrains.com/plugin/18361-microservices-annotator) ext plugin with annotations support.
-
 <!-- Plugin description -->
 
 [Microservices Annotator](https://plugins.jetbrains.com/plugin/18361-microservices-annotator) ext plugin with annotations support.
