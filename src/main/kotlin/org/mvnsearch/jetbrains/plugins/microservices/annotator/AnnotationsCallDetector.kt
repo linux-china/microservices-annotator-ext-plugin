@@ -2,8 +2,10 @@ package org.mvnsearch.jetbrains.plugins.microservices.annotator
 
 import com.intellij.codeInsight.AnnotationUtil
 import com.intellij.openapi.project.Project
+import com.intellij.psi.PsiAnnotation
 import com.intellij.psi.util.PsiTypesUtil
 import org.jetbrains.uast.UCallExpression
+import org.jetbrains.uast.java.annotations
 import org.strangeway.msa.db.InteractionType
 import org.strangeway.msa.frameworks.CallDetector
 import org.strangeway.msa.frameworks.FrameworkInteraction
@@ -66,14 +68,26 @@ class AnnotationsCallDetector : CallDetector {
         if (psiMethod != null) {
             val psiClass = psiMethod.containingClass
             if (psiClass != null) {
-                val annotations = if (AnnotationUtil.isAnnotated(psiClass, GLOBAL_ANNOTATIONS.keys, 0)) {
-                    psiClass.annotations
-                } else if (AnnotationUtil.isAnnotated(psiMethod, GLOBAL_ANNOTATIONS.keys, 0)) {
-                    psiMethod.annotations
-                } else {
-                    PsiTypesUtil.getPsiClass(uCall.receiverType)?.annotations
+                val annotations = mutableListOf<PsiAnnotation>()
+                //resolve method annotations
+                if (AnnotationUtil.isAnnotated(psiMethod, GLOBAL_ANNOTATIONS.keys, 0)) {
+                    annotations.addAll(psiMethod.annotations)
                 }
-                if (!annotations.isNullOrEmpty()) {
+                // resolve declared class/interface annotations
+                if (annotations.isEmpty()) {
+                    if (AnnotationUtil.isAnnotated(psiClass, GLOBAL_ANNOTATIONS.keys, 0)) {
+                        annotations.addAll(psiClass.annotations)
+                    }
+                }
+                // resolve receiver class/interface annotations
+                if (annotations.isEmpty()) {
+                    PsiTypesUtil.getPsiClass(uCall.receiverType)?.let { receiverPsiClass ->
+                        if (AnnotationUtil.isAnnotated(receiverPsiClass, GLOBAL_ANNOTATIONS.keys, 0)) {
+                            annotations.addAll(receiverPsiClass.annotations)
+                        }
+                    }
+                }
+                if (annotations.isNotEmpty()) {
                     for (annotation in annotations) {
                         if (GLOBAL_ANNOTATIONS.contains(annotation.qualifiedName)) {
                             return GLOBAL_ANNOTATIONS[annotation.qualifiedName]
