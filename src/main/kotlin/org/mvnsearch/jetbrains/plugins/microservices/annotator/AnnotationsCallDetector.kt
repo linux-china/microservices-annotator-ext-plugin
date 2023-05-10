@@ -2,6 +2,7 @@ package org.mvnsearch.jetbrains.plugins.microservices.annotator
 
 import com.intellij.codeInsight.AnnotationUtil
 import com.intellij.openapi.project.Project
+import com.intellij.psi.util.PsiTypesUtil
 import org.jetbrains.uast.UCallExpression
 import org.strangeway.msa.db.InteractionType
 import org.strangeway.msa.frameworks.CallDetector
@@ -12,18 +13,51 @@ import org.strangeway.msa.frameworks.hasLibraryClass
 class AnnotationsCallDetector : CallDetector {
     companion object {
         val GLOBAL_ANNOTATIONS = mapOf<String, Interaction>(
-            "org.mvnsearch.microservices.annotator.Broadcast" to FrameworkInteraction(InteractionType.BROADCAST, "unknown"),
-            "org.mvnsearch.microservices.annotator.CloudStorage" to FrameworkInteraction(InteractionType.CLOUD_STORAGE, "unknown"),
-            "org.mvnsearch.microservices.annotator.DataAccess" to FrameworkInteraction(InteractionType.DATABASE, "unknown"),
-            "org.mvnsearch.microservices.annotator.DatabaseAccess" to FrameworkInteraction(InteractionType.DATABASE, "unknown"),
-            "org.mvnsearch.microservices.annotator.ExternalProcess" to FrameworkInteraction(InteractionType.RUN_PROCESS, "unknown"),
-            "org.mvnsearch.microservices.annotator.FileOps" to FrameworkInteraction(InteractionType.FILESYSTEM, "unknown"),
+            "org.mvnsearch.microservices.annotator.Broadcast" to FrameworkInteraction(
+                InteractionType.BROADCAST,
+                "unknown"
+            ),
+            "org.mvnsearch.microservices.annotator.CloudStorage" to FrameworkInteraction(
+                InteractionType.CLOUD_STORAGE,
+                "unknown"
+            ),
+            "org.mvnsearch.microservices.annotator.DataAccess" to FrameworkInteraction(
+                InteractionType.DATABASE,
+                "unknown"
+            ),
+            "org.mvnsearch.microservices.annotator.DatabaseAccess" to FrameworkInteraction(
+                InteractionType.DATABASE,
+                "unknown"
+            ),
+            "org.mvnsearch.microservices.annotator.ExternalProcess" to FrameworkInteraction(
+                InteractionType.RUN_PROCESS,
+                "unknown"
+            ),
+            "org.mvnsearch.microservices.annotator.FileOps" to FrameworkInteraction(
+                InteractionType.FILESYSTEM,
+                "unknown"
+            ),
             "org.mvnsearch.microservices.annotator.IORead" to FrameworkInteraction(InteractionType.IO_READ, "unknown"),
-            "org.mvnsearch.microservices.annotator.IOWrite" to FrameworkInteraction(InteractionType.IO_WRITE, "unknown"),
-            "org.mvnsearch.microservices.annotator.MessageReceive" to FrameworkInteraction(InteractionType.MESSAGE_RECEIVE, "unknown"),
-            "org.mvnsearch.microservices.annotator.MessageSend" to FrameworkInteraction(InteractionType.MESSAGE_SEND, "unknown"),
-            "org.mvnsearch.microservices.annotator.RemoteAccess" to FrameworkInteraction(InteractionType.REQUEST, "unknown"),
-            "org.mvnsearch.microservices.annotator.Streaming" to FrameworkInteraction(InteractionType.STREAMING, "unknown"),
+            "org.mvnsearch.microservices.annotator.IOWrite" to FrameworkInteraction(
+                InteractionType.IO_WRITE,
+                "unknown"
+            ),
+            "org.mvnsearch.microservices.annotator.MessageReceive" to FrameworkInteraction(
+                InteractionType.MESSAGE_RECEIVE,
+                "unknown"
+            ),
+            "org.mvnsearch.microservices.annotator.MessageSend" to FrameworkInteraction(
+                InteractionType.MESSAGE_SEND,
+                "unknown"
+            ),
+            "org.mvnsearch.microservices.annotator.RemoteAccess" to FrameworkInteraction(
+                InteractionType.REQUEST,
+                "unknown"
+            ),
+            "org.mvnsearch.microservices.annotator.Streaming" to FrameworkInteraction(
+                InteractionType.STREAMING,
+                "unknown"
+            ),
         )
     }
 
@@ -37,9 +71,9 @@ class AnnotationsCallDetector : CallDetector {
                 } else if (AnnotationUtil.isAnnotated(psiMethod, GLOBAL_ANNOTATIONS.keys, 0)) {
                     psiMethod.annotations
                 } else {
-                    null
+                    PsiTypesUtil.getPsiClass(uCall.receiverType)?.annotations
                 }
-                if (annotations != null && annotations.isNotEmpty()) {
+                if (!annotations.isNullOrEmpty()) {
                     for (annotation in annotations) {
                         if (GLOBAL_ANNOTATIONS.contains(annotation.qualifiedName)) {
                             return GLOBAL_ANNOTATIONS[annotation.qualifiedName]
