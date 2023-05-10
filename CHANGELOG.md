@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [0.1.2]
+
+### Added
+
+- Add annotations from `uCall.receiverType()`
+- Compatible with IntelliJ IDEA 2023.2
+
 ## [0.1.0]
 
 ### Added
