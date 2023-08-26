@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.2.0]
+
+### Added
+
+- Add MicroServices annotator support for field/parameter/variable
+
 ## [0.1.2]
 
 ### Added
