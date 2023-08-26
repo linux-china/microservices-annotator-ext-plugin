@@ -2,10 +2,10 @@ package org.mvnsearch.jetbrains.plugins.microservices.annotator
 
 import com.intellij.codeInsight.AnnotationUtil
 import com.intellij.openapi.project.Project
-import com.intellij.psi.PsiAnnotation
+import com.intellij.psi.*
 import com.intellij.psi.util.PsiTypesUtil
 import org.jetbrains.uast.UCallExpression
-import org.jetbrains.uast.java.annotations
+import org.jetbrains.uast.tryResolveNamed
 import org.strangeway.msa.db.InteractionType
 import org.strangeway.msa.frameworks.CallDetector
 import org.strangeway.msa.frameworks.FrameworkInteraction
@@ -95,6 +95,22 @@ class AnnotationsCallDetector : CallDetector {
                     }
                 }
             }
+            // resolve receiver declare with microservices annotations
+            val declare = uCall.receiver?.tryResolveNamed()
+            if (declare != null) {
+                if (declare is PsiField || declare is PsiParameter || declare is PsiVariable) {
+                    if (declare is PsiModifierListOwner) {
+                        if (AnnotationUtil.isAnnotated(declare, GLOBAL_ANNOTATIONS.keys, 0)) {
+                            val annotations = declare.annotations
+                            for (annotation in annotations) {
+                                if (GLOBAL_ANNOTATIONS.contains(annotation.qualifiedName)) {
+                                    return GLOBAL_ANNOTATIONS[annotation.qualifiedName]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         return null
     }
@@ -102,5 +118,6 @@ class AnnotationsCallDetector : CallDetector {
     override fun isAvailable(project: Project): Boolean {
         return hasLibraryClass(project, "org.mvnsearch.microservices.annotator.RemoteAccess")
     }
+
 
 }
