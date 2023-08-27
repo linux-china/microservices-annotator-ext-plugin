@@ -39,6 +39,21 @@ public class UserController {
 String nick = userService.findNickById(1);
 ```
 
+Microservices Annotator interaction types and annotations:
+
+* Broadcast Data transmission: @Broadcast
+* Cloud Storage Access: @CloudStorage
+* Database Access: @DatabaseAccess
+* Data Access: @DataAccess
+* File System Operations: @FileOps
+* IO Read: @IORead
+* IO Write: @IOWrite
+* Message Receive: @MessageReceive
+* Message Send: @MessageSend
+* Streaming: @Streaming
+* Network Request: @RemoteAccess
+* External Process: @ExternalProcess
+
 <!-- Plugin description end -->
 
 ## Installation
