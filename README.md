@@ -1,9 +1,12 @@
 Microservices Annotator ext-plugin
 ===================================
 
+![MicroServices Annotator Annotations](screenshot.png)
+
 <!-- Plugin description -->
 
-[Microservices Annotator](https://plugins.jetbrains.com/plugin/18361-microservices-annotator) ext plugin with annotations support.
+[Microservices Annotator](https://plugins.jetbrains.com/plugin/18361-microservices-annotator) extension plugin with
+annotations support.
 
 Usage:
 
@@ -26,6 +29,7 @@ Usage:
 public interface UserService {
     String findNickById(Integer id);
 }
+
 // or 
 public class UserController {
     @RemoteAccess
@@ -65,7 +69,8 @@ Microservices Annotator interaction types and annotations:
 
 - Manually:
 
-  Download the [latest release](https://github.com/linux-china/microservices-annotator-ext-plugin/releases/latest) and install it manually using
+  Download the [latest release](https://github.com/linux-china/microservices-annotator-ext-plugin/releases/latest) and
+  install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 # References
