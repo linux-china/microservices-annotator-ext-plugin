@@ -7,7 +7,7 @@ Microservices Annotator ext-plugin
 
 Usage:
 
-* Add Microservices Annotator's annotation dependency
+* Add Microservices Annotator dependency
 
 ```xml
 
@@ -18,7 +18,7 @@ Usage:
 </dependency>
 ```
 
-* Add annotation in the code
+* Add annotation for class/field/parameter/variable.
 
 ```java
 
@@ -26,9 +26,14 @@ Usage:
 public interface UserService {
     String findNickById(Integer id);
 }
+// or 
+public class UserController {
+    @RemoteAccess
+    private UserService userService;
+}
 ```
 
-* Microservices annotate icon will be in gutter when APIs called.
+* Microservices annotator icon will be in the gutter when APIs called.
 
 ```
 String nick = userService.findNickById(1);
