@@ -17,7 +17,7 @@ Usage:
 <dependency>
     <groupId>org.mvnsearch</groupId>
     <artifactId>microservices-annotator</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
 </dependency>
 ```
 
@@ -57,6 +57,7 @@ Microservices Annotator interaction types and annotations:
 * Streaming: @Streaming
 * Network Request: @RemoteAccess
 * External Process: @ExternalProcess
+* JNI/FFI(Foreign Function Interface) Call: @ForeignAccess
 
 <!-- Plugin description end -->
 
