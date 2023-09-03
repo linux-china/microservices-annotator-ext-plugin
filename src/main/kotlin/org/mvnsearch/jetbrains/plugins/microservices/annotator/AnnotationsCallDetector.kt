@@ -38,7 +38,7 @@ class AnnotationsCallDetector : CallDetector {
             // todo change icon in the future
             "org.mvnsearch.microservices.annotator.ForeignAccess" to FrameworkInteraction(
                 InteractionType.RUN_PROCESS,
-                "unknown"
+                "jni/ffi"
             ),
             "org.mvnsearch.microservices.annotator.FileOps" to FrameworkInteraction(
                 InteractionType.FILESYSTEM,
