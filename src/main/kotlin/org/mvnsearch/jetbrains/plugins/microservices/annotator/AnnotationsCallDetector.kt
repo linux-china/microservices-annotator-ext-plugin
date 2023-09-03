@@ -132,11 +132,13 @@ class AnnotationsCallDetector : CallDetector {
     ): Interaction? {
         val attributeValue = annotation.findAttributeValue("value")
         if (attributeValue != null && defaultInteraction != null) {
-            val framework = attributeValue.text.replace("\"", "")
-            return FrameworkInteraction(
-                defaultInteraction.type,
-                framework
-            )
+            val framework = attributeValue.text.trim('"')
+            if (framework.isNotEmpty()) {
+                return FrameworkInteraction(
+                    defaultInteraction.type,
+                    framework
+                )
+            }
         }
         return defaultInteraction
     }
