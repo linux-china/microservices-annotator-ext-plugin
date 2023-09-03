@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.2.1]
+
+### Added
+
+- Add `@ForeignAccess` annotation support
+
 ## [0.2.0]
 
 ### Added
