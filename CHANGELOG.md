@@ -9,6 +9,7 @@
 ### Added
 
 - Add `@ForeignAccess` annotation support
+- Add interaction framework hint from annotation's value attribute
 
 ## [0.2.0]
 
