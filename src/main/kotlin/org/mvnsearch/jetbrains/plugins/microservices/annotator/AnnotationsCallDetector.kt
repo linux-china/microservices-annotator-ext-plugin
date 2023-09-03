@@ -95,7 +95,8 @@ class AnnotationsCallDetector : CallDetector {
                 if (annotations.isNotEmpty()) {
                     for (annotation in annotations) {
                         if (GLOBAL_ANNOTATIONS.contains(annotation.qualifiedName)) {
-                            return GLOBAL_ANNOTATIONS[annotation.qualifiedName]
+                            val interaction = GLOBAL_ANNOTATIONS[annotation.qualifiedName]
+                            return getFrameworkInteraction(annotation, interaction)
                         }
                     }
                 }
@@ -109,7 +110,8 @@ class AnnotationsCallDetector : CallDetector {
                             val annotations = declare.annotations
                             for (annotation in annotations) {
                                 if (GLOBAL_ANNOTATIONS.contains(annotation.qualifiedName)) {
-                                    return GLOBAL_ANNOTATIONS[annotation.qualifiedName]
+                                    val interaction = GLOBAL_ANNOTATIONS[annotation.qualifiedName]
+                                    return getFrameworkInteraction(annotation, interaction)
                                 }
                             }
                         }
@@ -122,6 +124,21 @@ class AnnotationsCallDetector : CallDetector {
 
     override fun isAvailable(project: Project): Boolean {
         return hasLibraryClass(project, "org.mvnsearch.microservices.annotator.RemoteAccess")
+    }
+
+    private fun getFrameworkInteraction(
+        annotation: PsiAnnotation,
+        defaultInteraction: Interaction?
+    ): Interaction? {
+        val attributeValue = annotation.findAttributeValue("value")
+        if (attributeValue != null && defaultInteraction != null) {
+            val framework = attributeValue.text.replace("\"", "")
+            return FrameworkInteraction(
+                defaultInteraction.type,
+                framework
+            )
+        }
+        return defaultInteraction
     }
 
 
