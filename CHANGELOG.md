@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.2.2]
+
+### Added
+
+- Compatible with IntelliJ IDEA 2023.3
+
 ## [0.2.1]
 
 ### Added
