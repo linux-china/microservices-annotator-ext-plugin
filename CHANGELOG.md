@@ -8,7 +8,7 @@
 
 ### Added
 
-- Add highlight for comment: `//! pay attention`
+- Add highlight for comment: `// ! pay attention` or `//! pay attention`
 
 ## [0.2.3]
 
