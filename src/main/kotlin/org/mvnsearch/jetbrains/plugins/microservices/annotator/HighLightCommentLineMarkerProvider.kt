@@ -20,7 +20,7 @@ class HighLightCommentLineMarkerProvider : LineMarkerProviderDescriptor() {
     override fun getLineMarkerInfo(element: PsiElement): LineMarkerInfo<*>? {
         if (element is PsiComment) {
             val text = element.text
-            if (text.startsWith("//!") || text.startsWith("// !")) {
+            if (text.startsWith("// !") || text.startsWith("//!")) {
                 return LineMarkerInfo(
                     element, element.textRange, AllIcons.Actions.Lightning,
                     {
