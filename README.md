@@ -59,6 +59,12 @@ Microservices Annotator interaction types and annotations:
 * External Process: @ExternalProcess
 * JNI/FFI(Foreign Function Interface) Call: @ForeignAccess
 
+Extra highlight for comment:
+
+```java
+//! Please note that this method is some expensive operation
+```
+
 **Extra**: annotator's interaction framework hint from annotation's value attribute.
 
 <!-- Plugin description end -->
@@ -80,3 +86,4 @@ Microservices Annotator interaction types and annotations:
 
 * Microservices Annotator annotations: https://github.com/linux-china/microservices-annotator
 * Microservices Annotator plugin: https://plugins.jetbrains.com/plugin/18361-microservices-annotator
+* microservices-call-annotator: https://github.com/strangeway-org/microservices-call-annotator
