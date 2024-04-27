@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.3.0]
+
+### Added
+
+- Add highlight for comment: `//! pay attention`
+
 ## [0.2.3]
 
 ### Added
