@@ -62,7 +62,7 @@ Microservices Annotator interaction types and annotations:
 Extra highlight for comment:
 
 ```java
-//! Please note that this method is some expensive operation
+// ! Please note that this method is some expensive operation
 ```
 
 **Extra**: annotator's interaction framework hint from annotation's value attribute.
