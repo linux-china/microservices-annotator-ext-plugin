@@ -3,4 +3,8 @@
     <extensions defaultExtensionNs="org.strangeway.msa">
         <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.annotator.AnnotationsCallDetector"/>
     </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <codeInsight.lineMarkerProvider language="UAST"
+                                        implementationClass="org.mvnsearch.jetbrains.plugins.microservices.annotator.HighLightCommentLineMarkerProvider"/>
+    </extensions>
 </idea-plugin>
