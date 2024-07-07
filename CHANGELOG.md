@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.3.1]
+
+### Added
+
+- Compatible with IntelliJ IDEA 2024.2
+
 ## [0.3.0]
 
 ### Added
