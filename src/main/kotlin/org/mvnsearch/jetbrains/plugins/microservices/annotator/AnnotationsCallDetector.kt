@@ -61,6 +61,10 @@ class AnnotationsCallDetector : CallDetector {
                 InteractionType.REQUEST,
                 "unknown"
             ),
+            "org.mvnsearch.microservices.annotator.AiAccess" to FrameworkInteraction(
+                InteractionType.REQUEST,
+                "AI"
+            ),
             "org.mvnsearch.microservices.annotator.Streaming" to FrameworkInteraction(
                 InteractionType.STREAMING,
                 "unknown"
