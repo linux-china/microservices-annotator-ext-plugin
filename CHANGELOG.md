@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+## [0.3.2]
+
+### Added
+
+- Add OpenAI and Spring AI stubs support
+- Add `@AiAccess` annotation support
+- Compatible with IntelliJ IDEA 2025.1
+
 ## [0.3.1]
 
 ### Added
