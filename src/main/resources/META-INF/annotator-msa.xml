@@ -2,6 +2,8 @@
     <depends>org.strangeway.msa</depends>
     <extensions defaultExtensionNs="org.strangeway.msa">
         <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.annotator.AnnotationsCallDetector"/>
+        <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.ai.OpenAiCallDetector"/>
+        <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.ai.SpringAiCallDetector"/>
     </extensions>
     <extensions defaultExtensionNs="com.intellij">
         <codeInsight.lineMarkerProvider language="UAST"
