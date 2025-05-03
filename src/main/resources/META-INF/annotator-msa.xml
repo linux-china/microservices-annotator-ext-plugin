@@ -4,6 +4,7 @@
         <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.annotator.AnnotationsCallDetector"/>
         <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.ai.OpenAiCallDetector"/>
         <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.ai.SpringAiCallDetector"/>
+        <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.ai.LangChain4jCallDetector"/>
     </extensions>
     <extensions defaultExtensionNs="com.intellij">
         <codeInsight.lineMarkerProvider language="UAST"
