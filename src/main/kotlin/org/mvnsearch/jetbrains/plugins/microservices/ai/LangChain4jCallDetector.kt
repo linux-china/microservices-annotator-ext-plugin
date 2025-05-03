@@ -12,6 +12,7 @@ import org.strangeway.msa.frameworks.hasLibraryClass
 
 class LangChain4jCallDetector : CallDetector {
     private val interaction: Interaction = FrameworkInteraction(InteractionType.REQUEST, "LangChain4j")
+    private val vectorInteraction: Interaction = FrameworkInteraction(InteractionType.DATABASE, "Vector DB")
     private val aiMessageAnnotations = listOf(
         "dev.langchain4j.service.SystemMessage",
         "dev.langchain4j.service.UserMessage"
@@ -21,6 +22,13 @@ class LangChain4jCallDetector : CallDetector {
     private val langChainStubInterfaces =
         listOf("dev.langchain4j.model.chat.ChatModel", "dev.langchain4j.model.chat.StreamingChatModel")
     private val langChainStubMethods = listOf("chat")
+    private val langChainVectorServiceStubInterfaces = listOf(
+        "dev.langchain4j.store.embedding.EmbeddingStore",
+    )
+    private val langChainVectorServiceCallStubMethods = listOf(
+        "add", "addAll", "remove", "removeAll", "search",
+    )
+
     override fun getCallInteraction(project: Project, uCall: UCallExpression): Interaction? {
         val psiMethod = uCall.resolve()
         if (psiMethod != null) {
@@ -30,7 +38,11 @@ class LangChain4jCallDetector : CallDetector {
                 val psiClass = psiMethod.containingClass
                 if (psiClass != null) {
                     val psiClassFullName = psiClass.qualifiedName!!
-                    if (psiClass.isInterface && AnnotationUtil.isAnnotated(psiClass, aiServiceAnnotations, 0)) {
+                    if (langChainVectorServiceStubInterfaces.contains(psiClassFullName)) {
+                        if (langChainVectorServiceCallStubMethods.contains(psiMethod.name)) {
+                            return vectorInteraction
+                        }
+                    } else if (psiClass.isInterface && AnnotationUtil.isAnnotated(psiClass, aiServiceAnnotations, 0)) {
                         return interaction
                     } else if (isLangChainServiceStub(psiClassFullName)) {
                         if (langChainStubMethods.contains(psiMethod.name)) {
