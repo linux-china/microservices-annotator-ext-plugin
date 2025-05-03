@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.3.3]
+
+### Added
+
+- Add LangChain4j support: `ChatModel`, `StreamingChatModel`, `@AiService` etc.
+
 ## [0.3.2]
 
 ### Added
