@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [0.4.0]
+
+### Added
+
+- Bundle Microservices Annotator plugin
+- Compatible with IntelliJ IDEA 2024.3 to 2026.2
+
 ## [0.3.3]
 
 ### Added
