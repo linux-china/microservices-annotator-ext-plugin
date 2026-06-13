@@ -5,7 +5,58 @@
     <vendor email="libing.chen@gmail.com">linux_china</vendor>
 
     <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.lang</depends>
 
-    <depends optional="true" config-file="annotator-msa.xml">org.strangeway.msa</depends>
+    <extensionPoints>
+        <extensionPoint name="callDetector" dynamic="true"
+                        interface="org.strangeway.msa.frameworks.CallDetector"/>
+    </extensionPoints>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="org.strangeway.msa.db.InteractionsUpdateStartupActivity"/>
+
+        <applicationService serviceImplementation="org.strangeway.msa.db.GlobalInteractionsState"/>
+
+        <codeInsight.lineMarkerProvider language="UAST"
+                                        implementationClass="org.strangeway.msa.MicroserviceCallLineMarkerProvider"/>
+        <codeInsight.lineMarkerProvider language="UAST"
+                                        implementationClass="org.mvnsearch.jetbrains.plugins.microservices.annotator.HighLightCommentLineMarkerProvider"/>
+
+        <intentionAction id="AnnotateMicroserviceCall">
+            <language>UAST</language>
+            <className>org.strangeway.msa.AnnotateMicroserviceCallIntention</className>
+            <category>Microservices</category>
+        </intentionAction>
+
+        <notificationGroup displayType="NONE" id="MicroservicesCallAnnotator" isLogByDefault="true"
+                           bundle="messages.MicroservicesCallAnnotatorBundle" key="msa.notification.group"/>
+
+    </extensions>
+
+    <actions>
+        <!-- <action class="org.strangeway.msa.db.UpdateDbAction"/>-->
+        <!-- <action class="org.strangeway.msa.db.ResetDbAction"/>-->
+    </actions>
+
+    <extensions defaultExtensionNs="com.github.linuxchina.microservices.annotator.ext.plugin">
+        <callDetector implementation="org.strangeway.msa.frameworks.DbCallDetector" order="first"/>
+
+        <callDetector implementation="org.strangeway.msa.frameworks.MicronautHttpCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.MicronautDataCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.SpringFeignCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.SpringDataCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.RetrofitCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.MicroprofileRestCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.JdbiCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.S3AsyncClientDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.MongoDbCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.RedisLettuceCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.GoogleFirestoreCallDetector"/>
+        <callDetector implementation="org.strangeway.msa.frameworks.GrpcCallDetector"/>
+        <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.annotator.AnnotationsCallDetector"/>
+        <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.ai.OpenAiCallDetector"/>
+        <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.ai.SpringAiCallDetector"/>
+        <callDetector implementation="org.mvnsearch.jetbrains.plugins.microservices.ai.LangChain4jCallDetector"/>
+    </extensions>
 
 </idea-plugin>
