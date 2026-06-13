@@ -9,7 +9,6 @@ import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DefaultActionGroup
-import com.intellij.openapi.actionSystem.impl.Utils
 import com.intellij.openapi.editor.markup.GutterIconRenderer
 import com.intellij.openapi.ui.popup.JBPopupFactory
 import com.intellij.openapi.util.TextRange
@@ -128,15 +127,26 @@ class MicroserviceCallLineMarkerProvider : LineMarkerProviderDescriptor() {
       override fun update(e: AnActionEvent) {}
     })
 
+    val dataContext = createAsyncDataContext(DataManager.getInstance().getDataContext(e.component))
     JBPopupFactory.getInstance()
       .createActionGroupPopup(
         "Interaction Actions",
         actionGroup,
-        Utils.createAsyncDataContext(DataManager.getInstance().getDataContext(e.component)),
+        dataContext,
         JBPopupFactory.ActionSelectionAid.MNEMONICS,
         false
       )
       .show(RelativePoint(e))
+  }
+
+  private fun createAsyncDataContext(dataContext: com.intellij.openapi.actionSystem.DataContext): com.intellij.openapi.actionSystem.DataContext {
+    return try {
+      val utilsClass = Class.forName("com.intellij.openapi.actionSystem.impl.Utils")
+      val method = utilsClass.getMethod("createAsyncDataContext", com.intellij.openapi.actionSystem.DataContext::class.java)
+      method.invoke(null, dataContext) as com.intellij.openapi.actionSystem.DataContext
+    } catch (e: Exception) {
+      dataContext
+    }
   }
 
   private class MsLineMarkerInfo(
