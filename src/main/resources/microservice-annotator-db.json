@@ -1,813 +1,970 @@
 {
-  "interactions" : [ {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "createTempFile",
-    "argsCount" : 3,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.net.http.HttpClient",
-    "methodName" : "send",
-    "argsCount" : 2,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.PrintStream",
-    "methodName" : "println",
-    "argsCount" : 1,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.data.r2dbc.core.R2dbcEntityTemplate",
-    "methodName" : "insert",
-    "argsCount" : 1,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.reactive.function.client.WebClient.RequestHeadersSpec",
-    "methodName" : "exchangeToMono",
-    "argsCount" : 1,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.File",
-    "methodName" : "exists",
-    "argsCount" : 0,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.File",
-    "methodName" : "mkdir",
-    "argsCount" : 0,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.lang.Throwable",
-    "methodName" : "printStackTrace",
-    "argsCount" : 0,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "io.micronaut.http.client.HttpClient",
-    "methodName" : "retrieve",
-    "argsCount" : 2,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "com.intellij.util.io.RequestBuilder",
-    "methodName" : "connect",
-    "argsCount" : 1,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "com.intellij.util.io.HttpRequests.Request",
-    "methodName" : "saveToFile",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.File",
-    "methodName" : "delete",
-    "argsCount" : 0,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "com.intellij.util.io.HttpRequests.Request",
-    "methodName" : "write",
-    "argsCount" : 1,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "com.intellij.util.io.HttpRequests.Request",
-    "methodName" : "readString",
-    "argsCount" : 0,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.EntityManager",
-    "methodName" : "merge",
-    "argsCount" : 1,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.EntityManager",
-    "methodName" : "persist",
-    "argsCount" : 1,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.EntityManager",
-    "methodName" : "remove",
-    "argsCount" : 1,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.EntityManager",
-    "methodName" : "find",
-    "argsCount" : 2,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.EntityManager",
-    "methodName" : "flush",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.EntityTransaction",
-    "methodName" : "commit",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.EntityTransaction",
-    "methodName" : "rollback",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.TypedQuery",
-    "methodName" : "getResultList",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.Query",
-    "methodName" : "getResultList",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.reactive.function.client.ClientResponse",
-    "methodName" : "bodyToMono",
-    "argsCount" : 1,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "createDirectories",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.util.FileSystemUtils",
-    "methodName" : "deleteRecursively",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "createTempDirectory",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "createDirectory",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "newInputStream",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "deleteIfExists",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.http.codec.multipart.FilePart",
-    "methodName" : "transferTo",
-    "argsCount" : 1,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.util.Properties",
-    "methodName" : "load",
-    "argsCount" : 1,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "newOutputStream",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.data.r2dbc.core.R2dbcEntityTemplate",
-    "methodName" : "delete",
-    "argsCount" : 2,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.r2dbc.core.DatabaseClient.GenericExecuteSpec",
-    "methodName" : "fetch",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.test.web.reactive.server.WebTestClient.RequestHeadersSpec",
-    "methodName" : "exchange",
-    "argsCount" : 0,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.mail.javamail.JavaMailSender",
-    "methodName" : "send",
-    "argsCount" : 1,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.amqp.core.AmqpTemplate",
-    "methodName" : "convertAndSend",
-    "argsCount" : 2,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "exchange",
-    "argsCount" : 5,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.PrintStream",
-    "methodName" : "println",
-    "argsCount" : 0,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.FileOutputStream",
-    "methodName" : "FileOutputStream",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "delete",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "exists",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "io.micronaut.http.client.BlockingHttpClient",
-    "methodName" : "retrieve",
-    "argsCount" : 2,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.jms.MessageProducer",
-    "methodName" : "send",
-    "argsCount" : 2,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.jms.MessageConsumer",
-    "methodName" : "setMessageListener",
-    "argsCount" : 1,
-    "interactionType" : "MESSAGE_RECEIVE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "readAllBytes",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.lang.ProcessBuilder",
-    "methodName" : "start",
-    "argsCount" : 0,
-    "interactionType" : "RUN_PROCESS"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "createTempFile",
-    "argsCount" : 4,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "org.apache.commons.io.FileUtils",
-    "methodName" : "deleteQuietly",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "io.micronaut.http.client.BlockingHttpClient",
-    "methodName" : "exchange",
-    "argsCount" : 2,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.mail.Transport",
-    "methodName" : "send",
-    "argsCount" : 1,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "org.apache.velocity.app.VelocityEngine",
-    "methodName" : "getTemplate",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "com.google.common.io.Resources",
-    "methodName" : "getResource",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "io.micronaut.http.client.BlockingHttpClient",
-    "methodName" : "exchange",
-    "argsCount" : 1,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.xml.bind.Marshaller",
-    "methodName" : "marshal",
-    "argsCount" : 2,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.InputStream",
-    "methodName" : "read",
-    "argsCount" : 0,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.FileOutputStream",
-    "methodName" : "write",
-    "argsCount" : 1,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "io.micronaut.websocket.WebSocketBroadcaster",
-    "methodName" : "broadcast",
-    "argsCount" : 2,
-    "interactionType" : "BROADCAST"
-  }, {
-    "language" : "JVM",
-    "className" : "java.sql.Statement",
-    "methodName" : "executeUpdate",
-    "argsCount" : 1,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.sql.PreparedStatement",
-    "methodName" : "executeUpdate",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.sql.PreparedStatement",
-    "methodName" : "executeQuery",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.sql.Statement",
-    "methodName" : "executeQuery",
-    "argsCount" : 1,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.PrintWriter",
-    "methodName" : "write",
-    "argsCount" : 1,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.jms.core.JmsTemplate",
-    "methodName" : "send",
-    "argsCount" : 2,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.jdbc.core.JdbcTemplate",
-    "methodName" : "query",
-    "argsCount" : 2,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.jdbc.core.JdbcTemplate",
-    "methodName" : "update",
-    "argsCount" : 2,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "javax.persistence.EntityTransaction",
-    "methodName" : "begin",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "newBufferedWriter",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "com.fasterxml.jackson.databind.ObjectWriter",
-    "methodName" : "writeValue",
-    "argsCount" : 2,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.FileInputStream",
-    "methodName" : "FileInputStream",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "com.fasterxml.jackson.databind.ObjectMapper",
-    "methodName" : "readValue",
-    "argsCount" : 2,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "org.apache.poi.hssf.usermodel.HSSFWorkbook",
-    "methodName" : "write",
-    "argsCount" : 1,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.hibernate.Session",
-    "methodName" : "get",
-    "argsCount" : 2,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.hibernate.Session",
-    "methodName" : "refresh",
-    "argsCount" : 1,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.hibernate.Criteria",
-    "methodName" : "list",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.hibernate.Criteria",
-    "methodName" : "uniqueResult",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.hibernate.query.Query",
-    "methodName" : "list",
-    "argsCount" : 0,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "software.amazon.awssdk.services.eventbridge.EventBridgeClient",
-    "methodName" : "putEvents",
-    "argsCount" : 1,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "software.amazon.awssdk.services.sqs.SqsAsyncClient",
-    "methodName" : "deleteMessage",
-    "argsCount" : 1,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "software.amazon.awssdk.services.sqs.SqsAsyncClient",
-    "methodName" : "sendMessage",
-    "argsCount" : 1,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "org.apache.commons.io.FileUtils",
-    "methodName" : "copyInputStreamToFile",
-    "argsCount" : 2,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.apache.commons.io.FileUtils",
-    "methodName" : "copyToFile",
-    "argsCount" : 2,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.net.URL",
-    "methodName" : "openStream",
-    "argsCount" : 0,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.File",
-    "methodName" : "mkdirs",
-    "argsCount" : 0,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "com.fasterxml.jackson.databind.ObjectMapper",
-    "methodName" : "readTree",
-    "argsCount" : 1,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "io.ktor.client.request.BuildersKt",
-    "methodName" : "post",
-    "argsCount" : 3,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "com.amazonaws.services.s3.AmazonS3",
-    "methodName" : "getObject",
-    "argsCount" : 1,
-    "interactionType" : "CLOUD_STORAGE"
-  }, {
-    "language" : "JVM",
-    "className" : "com.amazonaws.services.s3.AmazonS3",
-    "methodName" : "putObject",
-    "argsCount" : 4,
-    "interactionType" : "CLOUD_STORAGE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "size",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "createTempDirectory",
-    "argsCount" : 3,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "software.amazon.awssdk.services.s3.S3Client",
-    "methodName" : "getObjectAsBytes",
-    "argsCount" : 1,
-    "interactionType" : "CLOUD_STORAGE"
-  }, {
-    "language" : "JVM",
-    "className" : "com.fasterxml.jackson.core.JsonParser",
-    "methodName" : "readValueAsTree",
-    "argsCount" : 0,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "org.apache.camel.builder.endpoint.dsl.DirectEndpointBuilderFactory.DirectBuilders",
-    "methodName" : "direct",
-    "argsCount" : 1,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "org.apache.camel.model.ProcessorDefinition",
-    "methodName" : "split",
-    "argsCount" : 2,
-    "interactionType" : "STREAMING"
-  }, {
-    "language" : "JVM",
-    "className" : "org.apache.camel.model.ProcessorDefinition",
-    "methodName" : "process",
-    "argsCount" : 1,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "write",
-    "argsCount" : 3,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "createFile",
-    "argsCount" : 2,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.util.StreamUtils",
-    "methodName" : "copy",
-    "argsCount" : 2,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "readString",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.net.Socket",
-    "methodName" : "getInputStream",
-    "argsCount" : 0,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "postForObject",
-    "argsCount" : 4,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "getForObject",
-    "argsCount" : 3,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "getForEntity",
-    "argsCount" : 3,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "getForEntity",
-    "argsCount" : 2,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "patchForObject",
-    "argsCount" : 3,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "patchForObject",
-    "argsCount" : 4,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "delete",
-    "argsCount" : 2,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "delete",
-    "argsCount" : 1,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "exchange",
-    "argsCount" : 4,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "headForHeaders",
-    "argsCount" : 1,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "headForHeaders",
-    "argsCount" : 2,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "optionsForAllow",
-    "argsCount" : 1,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "optionsForAllow",
-    "argsCount" : 2,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "postForLocation",
-    "argsCount" : 3,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "postForLocation",
-    "argsCount" : 2,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "postForEntity",
-    "argsCount" : 4,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.web.client.RestTemplate",
-    "methodName" : "postForEntity",
-    "argsCount" : 3,
-    "interactionType" : "REQUEST"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.BufferedReader",
-    "methodName" : "readLine",
-    "argsCount" : 0,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.Reader",
-    "methodName" : "read",
-    "argsCount" : 1,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.amqp.rabbit.core.RabbitTemplate",
-    "methodName" : "convertAndSend",
-    "argsCount" : 3,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.amqp.rabbit.core.RabbitTemplate",
-    "methodName" : "convertAndSend",
-    "argsCount" : 4,
-    "interactionType" : "MESSAGE_SEND"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.Writer",
-    "methodName" : "write",
-    "argsCount" : 1,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.util.StreamUtils",
-    "methodName" : "copyToString",
-    "argsCount" : 2,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "kotlin.io.FilesKt__FileReadWriteKt",
-    "methodName" : "writeText",
-    "argsCount" : 3,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "kotlin.io.FilesKt__FileReadWriteKt",
-    "methodName" : "writeBytes",
-    "argsCount" : 2,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "kotlin.io.FilesKt__UtilsKt",
-    "methodName" : "deleteRecursively",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "org.springframework.security.provisioning.JdbcUserDetailsManager",
-    "methodName" : "validateUserDetails",
-    "argsCount" : 1,
-    "interactionType" : "DATABASE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "writeString",
-    "argsCount" : 3,
-    "interactionType" : "IO_WRITE"
-  }, {
-    "language" : "JVM",
-    "className" : "java.nio.file.Path",
-    "methodName" : "toAbsolutePath",
-    "argsCount" : 0,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.File",
-    "methodName" : "lastModified",
-    "argsCount" : 0,
-    "interactionType" : "FILESYSTEM"
-  }, {
-    "language" : "JVM",
-    "className" : "java.util.Scanner",
-    "methodName" : "nextLine",
-    "argsCount" : 0,
-    "interactionType" : "IO_READ"
-  }, {
-    "language" : "JVM",
-    "className" : "java.io.DataInputStream",
-    "methodName" : "readInt",
-    "argsCount" : 0,
-    "interactionType" : "IO_READ"
-  } , {
-    "language" : "JVM",
-    "className" : "java.nio.file.Files",
-    "methodName" : "list",
-    "argsCount" : 1,
-    "interactionType" : "FILESYSTEM"
-  } , {
-    "language" : "JVM",
-    "className" : "java.io.File",
-    "methodName" : "isDirectory",
-    "argsCount" : 0,
-    "interactionType" : "FILESYSTEM"
-  } ]
+  "interactions": [
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "createTempFile",
+      "argsCount": 3,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.net.http.HttpClient",
+      "methodName": "send",
+      "argsCount": 2,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.PrintStream",
+      "methodName": "println",
+      "argsCount": 1,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.data.r2dbc.core.R2dbcEntityTemplate",
+      "methodName": "insert",
+      "argsCount": 1,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.reactive.function.client.WebClient.RequestHeadersSpec",
+      "methodName": "exchangeToMono",
+      "argsCount": 1,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.File",
+      "methodName": "exists",
+      "argsCount": 0,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.File",
+      "methodName": "mkdir",
+      "argsCount": 0,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.lang.Throwable",
+      "methodName": "printStackTrace",
+      "argsCount": 0,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "io.micronaut.http.client.HttpClient",
+      "methodName": "retrieve",
+      "argsCount": 2,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "com.intellij.util.io.RequestBuilder",
+      "methodName": "connect",
+      "argsCount": 1,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "com.intellij.util.io.HttpRequests.Request",
+      "methodName": "saveToFile",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.File",
+      "methodName": "delete",
+      "argsCount": 0,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "com.intellij.util.io.HttpRequests.Request",
+      "methodName": "write",
+      "argsCount": 1,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "com.intellij.util.io.HttpRequests.Request",
+      "methodName": "readString",
+      "argsCount": 0,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.EntityManager",
+      "methodName": "merge",
+      "argsCount": 1,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.EntityManager",
+      "methodName": "persist",
+      "argsCount": 1,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.EntityManager",
+      "methodName": "remove",
+      "argsCount": 1,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.EntityManager",
+      "methodName": "find",
+      "argsCount": 2,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.EntityManager",
+      "methodName": "flush",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.EntityTransaction",
+      "methodName": "commit",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.EntityTransaction",
+      "methodName": "rollback",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.TypedQuery",
+      "methodName": "getResultList",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.Query",
+      "methodName": "getResultList",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.reactive.function.client.ClientResponse",
+      "methodName": "bodyToMono",
+      "argsCount": 1,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "createDirectories",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.util.FileSystemUtils",
+      "methodName": "deleteRecursively",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "createTempDirectory",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "createDirectory",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "newInputStream",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "deleteIfExists",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.http.codec.multipart.FilePart",
+      "methodName": "transferTo",
+      "argsCount": 1,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.util.Properties",
+      "methodName": "load",
+      "argsCount": 1,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "newOutputStream",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.data.r2dbc.core.R2dbcEntityTemplate",
+      "methodName": "delete",
+      "argsCount": 2,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.r2dbc.core.DatabaseClient.GenericExecuteSpec",
+      "methodName": "fetch",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.test.web.reactive.server.WebTestClient.RequestHeadersSpec",
+      "methodName": "exchange",
+      "argsCount": 0,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.mail.javamail.JavaMailSender",
+      "methodName": "send",
+      "argsCount": 1,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.amqp.core.AmqpTemplate",
+      "methodName": "convertAndSend",
+      "argsCount": 2,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "exchange",
+      "argsCount": 5,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.PrintStream",
+      "methodName": "println",
+      "argsCount": 0,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.FileOutputStream",
+      "methodName": "FileOutputStream",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "delete",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "exists",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "io.micronaut.http.client.BlockingHttpClient",
+      "methodName": "retrieve",
+      "argsCount": 2,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.jms.MessageProducer",
+      "methodName": "send",
+      "argsCount": 2,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.jms.MessageConsumer",
+      "methodName": "setMessageListener",
+      "argsCount": 1,
+      "interactionType": "MESSAGE_RECEIVE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "readAllBytes",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.lang.ProcessBuilder",
+      "methodName": "start",
+      "argsCount": 0,
+      "interactionType": "RUN_PROCESS"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "createTempFile",
+      "argsCount": 4,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "org.apache.commons.io.FileUtils",
+      "methodName": "deleteQuietly",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "io.micronaut.http.client.BlockingHttpClient",
+      "methodName": "exchange",
+      "argsCount": 2,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.mail.Transport",
+      "methodName": "send",
+      "argsCount": 1,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "org.apache.velocity.app.VelocityEngine",
+      "methodName": "getTemplate",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "com.google.common.io.Resources",
+      "methodName": "getResource",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "io.micronaut.http.client.BlockingHttpClient",
+      "methodName": "exchange",
+      "argsCount": 1,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.xml.bind.Marshaller",
+      "methodName": "marshal",
+      "argsCount": 2,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.InputStream",
+      "methodName": "read",
+      "argsCount": 0,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.FileOutputStream",
+      "methodName": "write",
+      "argsCount": 1,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "io.micronaut.websocket.WebSocketBroadcaster",
+      "methodName": "broadcast",
+      "argsCount": 2,
+      "interactionType": "BROADCAST"
+    },
+    {
+      "language": "JVM",
+      "className": "java.sql.Statement",
+      "methodName": "executeUpdate",
+      "argsCount": 1,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.sql.PreparedStatement",
+      "methodName": "executeUpdate",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.sql.PreparedStatement",
+      "methodName": "executeQuery",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.sql.Statement",
+      "methodName": "executeQuery",
+      "argsCount": 1,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.PrintWriter",
+      "methodName": "write",
+      "argsCount": 1,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.jms.core.JmsTemplate",
+      "methodName": "send",
+      "argsCount": 2,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.jdbc.core.JdbcTemplate",
+      "methodName": "query",
+      "argsCount": 2,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.jdbc.core.JdbcTemplate",
+      "methodName": "update",
+      "argsCount": 2,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "javax.persistence.EntityTransaction",
+      "methodName": "begin",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "newBufferedWriter",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "com.fasterxml.jackson.databind.ObjectWriter",
+      "methodName": "writeValue",
+      "argsCount": 2,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.FileInputStream",
+      "methodName": "FileInputStream",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "com.fasterxml.jackson.databind.ObjectMapper",
+      "methodName": "readValue",
+      "argsCount": 2,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "org.apache.poi.hssf.usermodel.HSSFWorkbook",
+      "methodName": "write",
+      "argsCount": 1,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.hibernate.Session",
+      "methodName": "get",
+      "argsCount": 2,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.hibernate.Session",
+      "methodName": "refresh",
+      "argsCount": 1,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.hibernate.Criteria",
+      "methodName": "list",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.hibernate.Criteria",
+      "methodName": "uniqueResult",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.hibernate.query.Query",
+      "methodName": "list",
+      "argsCount": 0,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "software.amazon.awssdk.services.eventbridge.EventBridgeClient",
+      "methodName": "putEvents",
+      "argsCount": 1,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "software.amazon.awssdk.services.sqs.SqsAsyncClient",
+      "methodName": "deleteMessage",
+      "argsCount": 1,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "software.amazon.awssdk.services.sqs.SqsAsyncClient",
+      "methodName": "sendMessage",
+      "argsCount": 1,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "org.apache.commons.io.FileUtils",
+      "methodName": "copyInputStreamToFile",
+      "argsCount": 2,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.apache.commons.io.FileUtils",
+      "methodName": "copyToFile",
+      "argsCount": 2,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.net.URL",
+      "methodName": "openStream",
+      "argsCount": 0,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.File",
+      "methodName": "mkdirs",
+      "argsCount": 0,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "com.fasterxml.jackson.databind.ObjectMapper",
+      "methodName": "readTree",
+      "argsCount": 1,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "io.ktor.client.request.BuildersKt",
+      "methodName": "post",
+      "argsCount": 3,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "com.amazonaws.services.s3.AmazonS3",
+      "methodName": "getObject",
+      "argsCount": 1,
+      "interactionType": "CLOUD_STORAGE"
+    },
+    {
+      "language": "JVM",
+      "className": "com.amazonaws.services.s3.AmazonS3",
+      "methodName": "putObject",
+      "argsCount": 4,
+      "interactionType": "CLOUD_STORAGE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "size",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "createTempDirectory",
+      "argsCount": 3,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "software.amazon.awssdk.services.s3.S3Client",
+      "methodName": "getObjectAsBytes",
+      "argsCount": 1,
+      "interactionType": "CLOUD_STORAGE"
+    },
+    {
+      "language": "JVM",
+      "className": "com.fasterxml.jackson.core.JsonParser",
+      "methodName": "readValueAsTree",
+      "argsCount": 0,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "org.apache.camel.builder.endpoint.dsl.DirectEndpointBuilderFactory.DirectBuilders",
+      "methodName": "direct",
+      "argsCount": 1,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "org.apache.camel.model.ProcessorDefinition",
+      "methodName": "split",
+      "argsCount": 2,
+      "interactionType": "STREAMING"
+    },
+    {
+      "language": "JVM",
+      "className": "org.apache.camel.model.ProcessorDefinition",
+      "methodName": "process",
+      "argsCount": 1,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "write",
+      "argsCount": 3,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "createFile",
+      "argsCount": 2,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.util.StreamUtils",
+      "methodName": "copy",
+      "argsCount": 2,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "readString",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.net.Socket",
+      "methodName": "getInputStream",
+      "argsCount": 0,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "postForObject",
+      "argsCount": 4,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "getForObject",
+      "argsCount": 3,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "getForEntity",
+      "argsCount": 3,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "getForEntity",
+      "argsCount": 2,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "patchForObject",
+      "argsCount": 3,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "patchForObject",
+      "argsCount": 4,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "delete",
+      "argsCount": 2,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "delete",
+      "argsCount": 1,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "exchange",
+      "argsCount": 4,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "headForHeaders",
+      "argsCount": 1,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "headForHeaders",
+      "argsCount": 2,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "optionsForAllow",
+      "argsCount": 1,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "optionsForAllow",
+      "argsCount": 2,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "postForLocation",
+      "argsCount": 3,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "postForLocation",
+      "argsCount": 2,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "postForEntity",
+      "argsCount": 4,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.web.client.RestTemplate",
+      "methodName": "postForEntity",
+      "argsCount": 3,
+      "interactionType": "REQUEST"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.BufferedReader",
+      "methodName": "readLine",
+      "argsCount": 0,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.Reader",
+      "methodName": "read",
+      "argsCount": 1,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.amqp.rabbit.core.RabbitTemplate",
+      "methodName": "convertAndSend",
+      "argsCount": 3,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.amqp.rabbit.core.RabbitTemplate",
+      "methodName": "convertAndSend",
+      "argsCount": 4,
+      "interactionType": "MESSAGE_SEND"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.Writer",
+      "methodName": "write",
+      "argsCount": 1,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.util.StreamUtils",
+      "methodName": "copyToString",
+      "argsCount": 2,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "kotlin.io.FilesKt__FileReadWriteKt",
+      "methodName": "readBytes",
+      "argsCount": 1,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "kotlin.io.FilesKt__FileReadWriteKt",
+      "methodName": "readText",
+      "argsCount": 2,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "kotlin.io.FilesKt__FileReadWriteKt",
+      "methodName": "readLines",
+      "argsCount": 2,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "kotlin.io.FilesKt__FileReadWriteKt",
+      "methodName": "writeText",
+      "argsCount": 3,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "kotlin.io.FilesKt__FileReadWriteKt",
+      "methodName": "writeBytes",
+      "argsCount": 2,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "kotlin.io.FilesKt__UtilsKt",
+      "methodName": "deleteRecursively",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "org.springframework.security.provisioning.JdbcUserDetailsManager",
+      "methodName": "validateUserDetails",
+      "argsCount": 1,
+      "interactionType": "DATABASE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "writeString",
+      "argsCount": 3,
+      "interactionType": "IO_WRITE"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Path",
+      "methodName": "toAbsolutePath",
+      "argsCount": 0,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.File",
+      "methodName": "lastModified",
+      "argsCount": 0,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.util.Scanner",
+      "methodName": "nextLine",
+      "argsCount": 0,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.DataInputStream",
+      "methodName": "readInt",
+      "argsCount": 0,
+      "interactionType": "IO_READ"
+    },
+    {
+      "language": "JVM",
+      "className": "java.nio.file.Files",
+      "methodName": "list",
+      "argsCount": 1,
+      "interactionType": "FILESYSTEM"
+    },
+    {
+      "language": "JVM",
+      "className": "java.io.File",
+      "methodName": "isDirectory",
+      "argsCount": 0,
+      "interactionType": "FILESYSTEM"
+    }
+  ]
 }
