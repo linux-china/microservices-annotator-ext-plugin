@@ -5,8 +5,7 @@ Microservices Annotator ext-plugin
 
 <!-- Plugin description -->
 
-[Microservices Annotator](https://plugins.jetbrains.com/plugin/18361-microservices-annotator) extension plugin with
-annotations support.
+Microservices Annotator plugin with annotation support.
 
 Usage:
 
@@ -17,7 +16,7 @@ Usage:
 <dependency>
     <groupId>org.mvnsearch</groupId>
     <artifactId>microservices-annotator</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.3</version>
 </dependency>
 ```
 
